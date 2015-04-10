@@ -2,6 +2,7 @@
 A multitude of ingame scripts for managing ship and station.
 
 ## Inventory Control System (ICS).cs
+*v0.2 (Beta)*
 ### What does it do?
 Managing inventory can take an uge part of your gaming time. This script is for people who want to have a fully automatic system. You no longer have to worry about moving item arround the conveyor systems of your ship. 
 
@@ -40,6 +41,7 @@ Q: None.
 A: None.
 
 ## Damage Control System (DCS).cs
+*v0.1 (Alpha)*
 ### What does it do?
 
 ### How does it work?
