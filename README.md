@@ -1,50 +1,33 @@
 # SpaceEngineers-InGameScripts
 A multitude of ingame scripts for managing ship and station.
 
-##asd
---
+## Inventory Control System (ICS).cs
 ### What does it do?
-A lot of people are frustrated when the oxygen is sucked out of their ships once they open their doors. 
-This script is for people who want to have a fully automatic system. You no longer have to worry about air traveling outside your ship. 
-So I created this script which does the entire depressurization process for you. All you have to do is press a single button. The system is completely secure. Even if you accidently press the door button you do not have to worry about losing air. 
-The script was made to be completely idiot proof. No random mashing and button spamming will break it. 
+Managing inventory can take an uge part of your gaming time. This script is for people who want to have a fully automatic system. You no longer have to worry about moving item arround the conveyor systems of your ship. 
+
+So I created this script which does the entire inventory management process for you. All you have to do is add a couple of tag on your cargo and refinery and the managing will start automatically. 
+
+The script manage items inside every ship compenent such as Cargo, Refinery, Assembler & connector. It's also give you a fast overview of your inventory via various TextPanel. WaterMark can be configurate to optimize ore refinery and compenent assembly. A priority list of ore to mine are also automatically created and showed in TextPanel.
 
 ### How does it work?
-The system starts by looking for blocks that have Exit, Entrance and chamber in their name. Exit stands for the exit doors, entrance for the entrance doors and chamber for the ventilation located in the depressurization chamber. You can have as many of them as you like. Just ensure they have the provided words in their names. 
+The script can be call repeatedly by a timer or manually directly on the Programming Block, by a button panel or by hotkey. It will make a complete round of all the blocks with inventory in the ship/station and sort every item where it should be. You have to put the appropriate tag on the name of every cargo that you want to be use has a specific storage. Ex: Large Cargo Container [Component] will receive all the "component" of the conveyor system.
 
-First the system locks all the doors in the depressurization chamber and secures them by turning them off. This will prevent any interraction with them and any unathorized attempt to open them. 
-Once done, the depressurization feature of the chamber's ventilation is turned on. 
-Then the system scans if the depressurization process was done corretly and there is no air left in the chamber. If everything is done correctly, the exit doors open and turn off again to prevent unauthorized interraction, otherwise the process reverts and opens the entrance doors again. 
+In the same order of idea, a refinery with the tag [Uranium] will process only "Uranium" and a cargo with the tag [Ingot] will receive all the ingot produce in the system. The same process can be done with Assembler and Connector and with every type of item or specific name (Ammo Gun Nickel Grinder Ore ...). 
 
-The process of entering is entirely the same. Instead of depressurization there is pressurization. 
+The name of the item or group of item must be in the name of the Container and surrend by square brace "[" and "]". A special name [Sealed] can be use to prevent the system to sort in/out any item in that specific Container.
 
-
+A census of all item is generated in order to give you a fast overview of your inventory. WaterMark level for each item can be configurate in other to give you a fast feedback and warning system.
 
 ## Quick Install Guide:
+1. Build a Programming Block and compile the code into it.
+2. Add tags to every container/refinery/assembler/connector you want to control.
+3. Run the script manually or by a timer that call itself and "Run" the Programming Block every X sec.
+4. Voila!
 
-1. Create 2 Timer blocks and name them "PTimer 1" and "PTimer 2" and make them 
-RUN the code from the computer hosting it by adding it to the hotbar. 
-2. Create 1 Interior light and name it "FunctionLight". Set all values to 1. 
-3. Create ventilations for depressurizing and name them/it "ChamberVent". Just make sure there is 
-word "Chamber" in it. (ChamberVent 1, 2, 3.. etc) 
-4. Make doors. The entrance doors named "Entrance" and the exit doors named "Exit". Again, make as many as you like. 
-Just make sure it has the words provided in their names. (ExitDoor 1, 2, 3.. etc) 
-5. Make a computer and upload this code (Duh). 
-6. Create button panels that run the code for opening and closing. (Another duh). 
-
-
-You can also change the time the depressurization takes. Default is 7 seconds. 
-to do this change YourCustomTimer = 7; to YourCustomTimer = "Seconds". 
-DO NOT SET IT LOWER THAN 3 SECONDS. 
-example: You want the process to take 10 seconds then simply change the it to: 
-YourCustomTimer = 10; 
+If you dont want to fight agains the program when you move manually some items, you can turn off the timer or set the loop to more than 10 second.
 
 ## What is it good for? 
-Some larger rooms with small amount of ventilations take longer to depresurize and the system will 
-not allow you to exit while there is still air in the chamber. 
-
-MAKE SURE THERE IS ENOUGH SPACE IN THE TANKS TO STORE THE OXYGEN IN THE CHAMBER. 
-OTHERWISE THE VENT WILL NOT BE ABLE TO SUCK OUT THE AIR AND THE EXIT DOOR WILL NOT OPEN. 
+Manage and resume your inventory automaticaly. Automatically establish the nest 
 
 MADE BY: Alexandre Prevost / prevosta. 
 
@@ -52,8 +35,5 @@ Enjoy
 And do not forget to RATE! 
 
 ## FAQ.
-Q: Help! Only the entrance doors are opening and closing. 
-A: The oxygen tanks are probably full and the air in the chamber does not get sucked out. Make another tank or remove some air from the tanks. Also turn off your oxygen generators. 
-
-Q: I have set up the code by following the instructions but the code is giving me Exception errors and it is not working. 
-A: There might be another block with the name Chamber/Entrance/Exit/ that is not an Air Vent or a door. Please remove it or change its name.
+Q: None.
+A: None.
