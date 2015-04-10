@@ -21,13 +21,36 @@ A census of all item is generated in order to give you a fast overview of your i
 ## Quick Install Guide:
 1. Build a Programming Block and compile the code into it.
 2. Add tags to every container/refinery/assembler/connector you want to control.
+3. Build a TextPanel with the tag [ICS] in the name.
+4. Run the script manually or by a timer that call itself and "Run" the Programming Block every X sec.
+5. Voila!
+
+If you don't want to fight agains the program when you move manually some items, you can turn off the timer or set the loop to more than 10 second.
+
+## What is it good for? 
+Manage and display your inventory automaticaly. Establish the next ore you need to mine. Manage the ore and component processing to ensure every item amount stay on the WaterMark configurated.
+
+MADE BY: Alexandre Prevost / prevosta. 
+
+Enjoy 
+And do not forget to RATE! 
+
+## FAQ.
+Q: None.
+A: None.
+
+## Damage Control System (DCS).cs
+### What does it do?
+
+### How does it work?
+
+## Quick Install Guide:
+1. Build a Programming Block and compile the code into it.
+2. Build a TextPanel with the tag [DCS] in the name.
 3. Run the script manually or by a timer that call itself and "Run" the Programming Block every X sec.
 4. Voila!
 
-If you dont want to fight agains the program when you move manually some items, you can turn off the timer or set the loop to more than 10 second.
-
 ## What is it good for? 
-Manage and resume your inventory automaticaly. Automatically establish the nest 
 
 MADE BY: Alexandre Prevost / prevosta. 
 
